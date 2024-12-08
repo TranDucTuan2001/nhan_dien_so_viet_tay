@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-img-size {
+            max-width: 300px;
+            /* Thay đổi kích thước tối đa theo ý muốn */
+            height: auto;
+        }
+       
+        body {
+            background-image: url('https://img.freepik.com/free-vector/gradient-numerology-background_23-2150051043.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-headers {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+            background-color: #0aea3e;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .btn-custom {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom {
+            background-color: #007bff;
+            border: none;
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #2acbef;
+        }
+
+        .btn-secondary-custom {
+            background-color: #e8931c;
+            border: none;
+            color: white;
+        }
+
+        .btn-secondary-custom:hover {
+            background-color: #f3ef15;
+        }
+
+        .form-group {
+            margin-top: 15px;
+        }
+        .result-image {
+            max-width: 50%; /* Đảm bảo ảnh không vượt quá chiều rộng của container */
+            height: auto; /* Giữ nguyên tỷ lệ khung hình */
+            border: 2px solid #28a745; /* Viền màu xanh lá cây */
+            border-radius: 10px; /* Góc bo tròn nhẹ */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+            margin-top: 20px; /* Khoảng cách phía trên */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card text-center">
+                    <div class="card-headers">
+                        <h1 style="color: white;">Kết quả</h1>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">Ảnh đã tải lên là số: <strong>{{ prediction }}</strong></p>
+                        <img src="{{ image_url }}" alt="Uploaded Image" class="result-image">
+                       
+                    </div>
+                    <div class="button">
+                        <a href="{% url 'predict_digit' %}" class="btn btn-primary-custom btn-custom">Tiếp tục với ảnh khác</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
